@@ -217,6 +217,8 @@ section.doorPresentation{
                             padding: 20px 10px;
                             transition: 0.4s ease all;
                             margin: 0px 0 35px;
+                            position: relative;
+
                             &:hover{
                               -webkit-box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
                               -moz-box-shadow: 10px 10px 40px -10px rgba(0,0,0,0.7);
@@ -226,6 +228,23 @@ section.doorPresentation{
                             img{
                                 max-width: 68px;
                                 margin: 0 auto;
+                            }
+
+                            .topColor{
+                                position: absolute;
+                                top: 0px;
+                                left: calc(50% - 26px);
+                                color: white;
+                                background-color: $portaRed;
+                                padding: 10px 8px;
+                                text-align: center;
+                                h3{
+                                    @include sansFont(18px, 700, 1);
+                                }
+
+                                p{
+                                    @include sansFont(16px, 400, 1);
+                                }
                             }
 
                             .itemInfoWrapper{

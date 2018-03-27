@@ -1,0 +1,296 @@
+.siteHeader {
+    width: 100%;
+
+    .owl-carousel {
+        .owl-stage-outer {
+            .owl-stage {
+                .owl-item {
+                    .item {
+                        position: relative;
+                        z-index: 1;
+                        max-height: 600px;
+                        overflow: hidden;
+
+                        img {
+                            width: 100%;
+                        }
+
+                        .leftNavArrow,
+                        .rightNavArrow {
+                            position: absolute;
+                            z-index: 3;
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            color: white;
+                            font-size: 72px;
+                            width: 50%;
+                            top: 0;
+                            transition: 0.3s ease all;
+                            opacity: 0;
+
+                            @media (max-width: 992px){
+                                display: none;
+                            }
+
+                            &:hover {
+                                opacity: 1;
+                            }
+
+                            i {
+                                cursor: pointer;
+                            }
+                        }
+
+                        .leftNavArrow {
+                            justify-content: flex-start;
+                            left: 0;
+                        }
+
+                        .rightNavArrow {
+                            justify-content: flex-end;
+                            right: 0;
+                        }
+
+                        .sliderText {
+                            position: absolute;
+                            top: 0;
+                            z-index: 2;
+                            width: 100%;
+                            height: 100%;
+
+                            .sliderTextPosition {
+                                max-width: 1170px;
+                                margin: 0 auto;
+                                display: flex;
+                                justify-content: space-between;
+                                flex-direction: column;
+                                height: 100%;
+                                position: relative;
+
+                                h1.logoWrapper {
+                                    align-self: flex-start;
+                                    position: relative;
+                                    z-index: 4;
+
+                                    a {
+                                        cursor: pointer;
+                                        display: flex;
+                                    }
+                                }
+
+                                .topCollectionsLogoWrapper {
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
+
+                                    @media (max-width: 992px){
+                                        display: none;
+                                    }
+                                }
+
+                                .sliderTextInner {
+                                    max-height: 426px;
+                                    max-width: 1170px;
+                                    display: flex;
+                                    color: white;
+                                    justify-content: space-between;
+                                    flex-basis: 100%;
+                                    position: relative;
+
+                                    .sliderTextInnerWrapper {
+                                        background-color: rgba(0, 177, 148, .75);
+                                        padding: 0 0 88px 100px;
+                                        max-width: 670px;
+                                        flex-basis: 65.8%;
+                                        display: flex;
+                                        justify-content: space-between;
+
+                                        .sliderTextWrapper {
+                                            max-width: 470px;
+
+                                            h2 {
+                                                @include sansFont(36px, 700, 1.16);
+                                                padding-top: 88px;
+                                            }
+
+                                            p {
+                                                padding-top: 20px;
+                                                @include sansFont(24px, 400, 1.16);
+                                            }
+                                        }
+
+                                        .sliderPhotoWrapper {
+                                            padding-top: 20px;
+                                            padding-right: 20px;
+
+                                            img {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .menuBar {
+        max-height: 105px;
+        display: flex;
+        align-items: center;
+        background-color: white;
+        position: relative;
+        -webkit-box-shadow: 3px 3px 30px -7px rgba(0,0,0,0.75);
+        -moz-box-shadow: 3px 3px 30px -7px rgba(0,0,0,0.75);
+        box-shadow: 3px 3px 30px -7px rgba(0,0,0,0.75);
+
+        @media (max-width: 992px){
+            max-height: none;
+        }
+
+        .menuWrapper {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-basis: 100%;
+            margin: 0 auto;
+
+            @media (max-width: 992px){
+                flex-wrap: wrap;
+            }
+
+
+            .menuItem {
+                padding: 30px;
+                @include sansFont(22px, 700, 1.16);
+                text-transform: uppercase;
+                display: flex;
+                flex-basis: 33%;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                cursor: pointer;
+                z-index: 5;
+                transition: 0.6s ease all;
+
+                @media (max-width: 992px){
+                    padding: 10px 5px;
+                }
+
+                &.inactive {
+                    opacity: 0.15;
+                }
+
+                &.rotateArrow {
+                    &:after {
+                        transform: rotate(180deg);
+                    }
+                }
+
+                &:nth-of-type(1) {
+                    &:before {
+                        background-image: url("../img/ramka_pomaranczowy.svg");
+                    }
+
+                    &:after {
+                        color: $portaOrange;
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    &:before {
+                        background-image: url("../img/ramka_zielona.svg");
+                    }
+
+                    &:after {
+                        color: $portaLightGreen;
+                    }
+                }
+
+                &:nth-of-type(3) {
+                    &:before {
+                        background-image: url("../img/ramka_niebieski.svg");
+                    }
+
+                    &:after {
+                        color: $portaBlue;
+                    }
+                }
+
+                &:before {
+                    content: '';
+                    display: block;
+                    width: 30px;
+                    height: 40px;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    position: relative;
+                    left: 10px;
+                }
+
+                &:after {
+                    content: '\E802';
+                    font-family: 'fontello';
+                    padding: 0 15px;
+                    transition: 0.6s ease all;
+                }
+            }
+        }
+    }
+
+    .accessoriesWrapper {
+        margin-top: 1px;
+        width: 100%;
+        position: absolute;
+        z-index: 5;
+        background-color: white;
+        -webkit-box-shadow: 4px 15px 13px -15px rgba(0,0,0,0.75);
+        -moz-box-shadow: 4px 15px 13px -15px rgba(0,0,0,0.75);
+        box-shadow: 4px 15px 13px -15px rgba(0,0,0,0.75);
+        display: none;
+
+        .accessoriesWrapperInner {
+            max-width: 1170px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 30px 20px 0;
+
+            .accessoriesItem {
+                flex-basis: 45%;
+                display: flex;
+                align-items: center;
+                padding: 30px 0;
+
+                @media (max-width: 992px){
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    flex-basis: 100%;
+                }
+
+                .accessoriesItemPhoto {
+                    padding-right: 30px;
+                }
+
+                .accessoriesItemText {
+                    h3 {
+                        @include sansFont(22px, 700, 1.16);
+                        padding-bottom: 18px;
+
+                        @media (max-width: 992px){
+                            padding-top: 15px;
+                        }
+                    }
+
+                    p {
+                        @include sansFont(18px, 300, 1.16);
+
+                    }
+                }
+            }
+        }
+    }
+}

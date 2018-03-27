@@ -1,0 +1,15 @@
+$backgroundColor: #f2f6f6;
+$portaOrange: #f39200;
+$portaBlue: #4a90b3;
+$portaLightGreen: #86bd25;
+$portaGreen: #00b194;
+$portaGrey: #303030;
+$portaRed: #cd1719;
+
+
+@mixin sansFont($fontSize, $fontWeight, $lineHeight){
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    line-height: $lineHeight;
+}

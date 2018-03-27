@@ -1,0 +1,57 @@
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-bottom: 64px;
+}
+
+.container{
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.topCollectionsLogoWrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 115px;
+    max-height: 230px;
+
+
+    .topCollectionsLogoWrapperInner {
+        background-color: #cd1719;
+        color: white;
+        width: 100%;
+        text-align: center;
+        padding-top: 45px;
+        padding-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        h2 {
+            @include sansFont(32px, 700, 1.16);
+        }
+
+        p {
+            @include sansFont(20px, 400, 1.16);
+        }
+    }
+
+    .topCollectionsLogoGuarantee {
+        background-color: black;
+        color: white;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+        padding: 15px 0;
+        p {
+            @include sansFont(18px, 700, 1.16);
+
+            span {
+                @include sansFont(76px, 700, 1);
+                margin-right: 10px;
+            }
+        }
+    }
+}

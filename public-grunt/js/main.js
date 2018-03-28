@@ -81,7 +81,7 @@ $(document).ready(function() {
         modelsSlider.trigger('prev.owl.carousel');
     });
 
-    var allCollectionsSlider = $(".allCollectionsSliderWrapper").owlCarousel({
+    var allCollectionsSlider = $(".allCollectionsSliderWrapperInner").owlCarousel({
         loop: false,
         margin: 0,
         dots: false,
@@ -102,13 +102,39 @@ $(document).ready(function() {
         }
     });
 
-    // $('.modelsSliderWrapper .navArrow.rightArrow').click(function() {
-    //     modelsSlider.trigger('next.owl.carousel');
-    // });
-    //
-    // $('.modelsSliderWrapper .navArrow.leftArrow').on('click', function() {
-    //     modelsSlider.trigger('prev.owl.carousel');
-    // });
+    $('.allCollectionsSliderWrapper .navArrow.rightArrow .arrow').click(function() {
+        allCollectionsSlider.trigger('next.owl.carousel');
+    });
+
+    $('.allCollectionsSliderWrapper .navArrow.leftArrow .arrow').on('click', function() {
+        allCollectionsSlider.trigger('prev.owl.carousel');
+    });
+
+    var recomendedCollectionWrapper = $(".recomendedCollectionWrapperInner").owlCarousel({
+        loop: false,
+        margin: 20,
+        dots: false,
+        nav: false,
+        responsive: {
+            0: {
+                items: 1
+            },
+            400: {
+                items: 2
+            },
+            772: {
+                items: 3
+            }
+        }
+    });
+
+    $('.recomendedCollectionWrapper .navArrow.rightArrow').click(function() {
+        recomendedCollectionWrapper.trigger('next.owl.carousel');
+    });
+
+    $('.recomendedCollectionWrapper .navArrow.leftArrow').on('click', function() {
+        recomendedCollectionWrapper.trigger('prev.owl.carousel');
+    });
 
 
     /////////////// MENU //////////////////

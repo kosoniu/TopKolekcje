@@ -8,6 +8,24 @@ body{
     margin: 0 auto;
 }
 
+.redText{
+  color: $portaRed;
+  font-weight: 700 !important;
+}
+
+.regularFont{
+  font-weight: 400;
+  color: black;
+}
+
+.boldText{
+  font-weight: 700;
+}
+
+.greyText{
+  color: #778692;
+}
+
 .topCollectionsLogoWrapper {
     position: absolute;
     top: 0;
@@ -51,6 +69,122 @@ body{
             span {
                 @include sansFont(76px, 700, 1);
                 margin-right: 10px;
+            }
+        }
+    }
+}
+
+.menuItem {
+    padding: 30px;
+    @include sansFont(22px, 700, 1.16);
+    text-transform: uppercase;
+    display: flex;
+    flex-basis: 33%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    z-index: 5;
+    transition: 0.6s ease all;
+
+    @media (max-width: 992px){
+        padding: 10px 5px;
+    }
+
+    &.inactive {
+        opacity: 0.15;
+    }
+
+    &.rotateArrow {
+        &:after {
+            transform: rotate(180deg);
+        }
+    }
+
+    &:nth-of-type(1) {
+        &:before {
+            background-image: url("../img/ramka_pomaranczowy.svg");
+        }
+
+        &:after {
+            color: $portaOrange;
+        }
+    }
+
+    &:nth-of-type(2) {
+        &:before {
+            background-image: url("../img/ramka_zielona.svg");
+        }
+
+        &:after {
+            color: $portaLightGreen;
+        }
+    }
+
+    &:nth-of-type(3) {
+        &:before {
+            background-image: url("../img/ramka_niebieski.svg");
+        }
+
+        &:after {
+            color: $portaBlue;
+        }
+    }
+
+    &:before {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: relative;
+        left: 10px;
+    }
+
+    &:after {
+        content: '\E802';
+        font-family: 'fontello';
+        padding: 0 15px;
+        transition: 0.6s ease all;
+    }
+}
+
+header.blackBar{
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    max-height: 60px;
+
+    .blackBarWrapper{
+        max-width: 1440px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-start;
+        a{
+            text-decoration: none;
+            color: white;
+            @include sansFont(16px, 400, 1.16);
+            padding: 20px 15px;
+            display: flex;
+            align-items: center;
+
+            @media (max-width: 550px){
+                padding: 20px 5px;
+            }
+
+            span{
+                @include sansFont(8px, 300, 1.16);
+                padding-right: 5px;
+                i{
+
+                }
+            }
+            b{
+                @include sansFont(16px, 700, 1.16);
+                padding-left: 5px;
             }
         }
     }

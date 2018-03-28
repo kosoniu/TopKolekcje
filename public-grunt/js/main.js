@@ -81,6 +81,35 @@ $(document).ready(function() {
         modelsSlider.trigger('prev.owl.carousel');
     });
 
+    var allCollectionsSlider = $(".allCollectionsSliderWrapper").owlCarousel({
+        loop: false,
+        margin: 0,
+        dots: false,
+        nav: false,
+        responsive: {
+            0: {
+                items: 1
+            },
+            400: {
+                items: 2
+            },
+            772: {
+                items: 4
+            },
+            1170:{
+                items: 6
+            }
+        }
+    });
+
+    // $('.modelsSliderWrapper .navArrow.rightArrow').click(function() {
+    //     modelsSlider.trigger('next.owl.carousel');
+    // });
+    //
+    // $('.modelsSliderWrapper .navArrow.leftArrow').on('click', function() {
+    //     modelsSlider.trigger('prev.owl.carousel');
+    // });
+
 
     /////////////// MENU //////////////////
 

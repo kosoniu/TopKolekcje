@@ -1,56 +1,91 @@
-.siteHeader {
+header.siteHeader {
     width: 100%;
+    position: relative;
+
+    .leftNavArrow,
+    .rightNavArrow {
+        position: absolute;
+        z-index: 3;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        color: white;
+        font-size: 72px;
+        width: 20%;
+        top: 0;
+        transition: 0.3s ease all;
+        opacity: 0;
+
+        @media (max-width: 992px){
+            display: none;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+
+        i {
+            cursor: pointer;
+        }
+    }
+
+    .leftNavArrow {
+        justify-content: flex-start;
+        left: 0;
+
+        img{
+          cursor: pointer;
+          transform: rotatey(180deg);
+          position: absolute;
+          left: 20%;
+        }
+    }
+
+    .rightNavArrow {
+        justify-content: flex-end;
+        right: 0;
+
+        img{
+          cursor: pointer;
+          position: absolute;
+          right: 20%;
+        }
+    }
 
     .owl-carousel {
         .owl-stage-outer {
             .owl-stage {
                 .owl-item {
+                  a{
+
                     .item {
-                        position: relative;
-                        z-index: 1;
-                        max-height: 600px;
-                        overflow: hidden;
+                      position: relative;
+                      z-index: 1;
+                      max-height: 600px;
+                      overflow: hidden;
+
+                      .seeMoreButton{
+                        position: absolute;
+                        left: 30px;
+                        bottom: 30px;
+                        background-color: rgba(0, 177, 148, .75);
+                        padding: 10px 15px;
+                        border: 1px solid white;
+                        z-index: 2;
+                        color: white;
+                        @include sansFont(16px, 400, 1.16);
+
+
+                        @media (min-width: 500px){
+                          display: none;
+                        }
+                      }
 
                         img {
                             width: 100%;
                         }
 
-                        .leftNavArrow,
-                        .rightNavArrow {
-                            position: absolute;
-                            z-index: 3;
-                            height: 100%;
-                            display: flex;
-                            align-items: center;
-                            color: white;
-                            font-size: 72px;
-                            width: 50%;
-                            top: 0;
-                            transition: 0.3s ease all;
-                            opacity: 0;
 
-                            @media (max-width: 992px){
-                                display: none;
-                            }
-
-                            &:hover {
-                                opacity: 1;
-                            }
-
-                            i {
-                                cursor: pointer;
-                            }
-                        }
-
-                        .leftNavArrow {
-                            justify-content: flex-start;
-                            left: 0;
-                        }
-
-                        .rightNavArrow {
-                            justify-content: flex-end;
-                            right: 0;
-                        }
 
                         .sliderText {
                             position: absolute;
@@ -72,6 +107,16 @@
                                     align-self: flex-start;
                                     position: relative;
                                     z-index: 4;
+
+                                        @media (max-width: 500px){
+                                          img{
+                                            width: 40%;
+                                          }
+                                        }
+
+                                        @media (max-width: 1170px){
+                                          margin-left: 20px;
+                                        }
 
                                     a {
                                         cursor: pointer;
@@ -98,6 +143,14 @@
                                     flex-basis: 100%;
                                     position: relative;
 
+                                    @media(max-width: 500px){
+                                      display: none;
+                                    }
+
+                                    @media(min-width: 500px) and (max-width: 992px){
+                                      max-height: 250px;
+                                    }
+
                                     .sliderTextInnerWrapper {
                                         background-color: rgba(0, 177, 148, .75);
                                         padding: 0 0 88px 100px;
@@ -106,17 +159,47 @@
                                         display: flex;
                                         justify-content: space-between;
 
+                                        @media (max-width: 772px){
+                                          max-width: none;
+                                          flex-basis: calc(100% - 20px);
+                                          padding: 20px;
+                                        }
+
+                                        @media (min-width: 772px) and (max-width: 992px){
+                                          padding: 40px;
+                                        }
+
                                         .sliderTextWrapper {
                                             max-width: 470px;
 
                                             h2 {
                                                 @include sansFont(36px, 700, 1.16);
                                                 padding-top: 88px;
+
+                                                @media (min-width: 500px) and (max-width: 772px){
+                                                  padding-top: 0;
+                                                  @include sansFont(16px, 700, 1.16);
+                                                }
+
+                                                @media (min-width: 772px) and (max-width: 992px){
+                                                  @include sansFont(20px, 700, 1.16);
+                                                  padding-top: 0;
+                                                }
                                             }
 
                                             p {
                                                 padding-top: 20px;
                                                 @include sansFont(24px, 400, 1.16);
+
+                                                @media (min-width: 500px) and (max-width: 600px){
+                                                  @include sansFont(14px, 400, 1.16);
+                                                  padding-top: 10px;
+                                                }
+
+                                                @media (min-width: 600px) and (max-width: 992px){
+                                                  @include sansFont(16px, 400, 1.16);
+                                                  padding-top: 10px;
+                                                }
                                             }
                                         }
 
@@ -125,12 +208,17 @@
                                             padding-right: 20px;
 
                                             img {}
+
+                                            @media (max-width: 400px){
+                                              padding: 0;
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
                     }
+                  }
                 }
             }
         }
@@ -142,9 +230,7 @@
         align-items: center;
         background-color: white;
         position: relative;
-        -webkit-box-shadow: 3px 3px 30px -7px rgba(0,0,0,0.75);
-        -moz-box-shadow: 3px 3px 30px -7px rgba(0,0,0,0.75);
-        box-shadow: 3px 3px 30px -7px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.1);
 
         @media (max-width: 992px){
             max-height: none;
@@ -162,7 +248,7 @@
             }
 
 
-            
+
         }
     }
 

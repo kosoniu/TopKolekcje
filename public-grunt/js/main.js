@@ -17,11 +17,11 @@ $(document).ready(function() {
         }
     });
 
-    $('.rightNavArrow i').click(function() {
+    $('.rightNavArrow img').click(function() {
         owlNav.trigger('next.owl.carousel');
     });
 
-    $('.leftNavArrow i').on('click', function() {
+    $('.leftNavArrow img').on('click', function() {
         owlNav.trigger('prev.owl.carousel');
     });
 
@@ -44,11 +44,11 @@ $(document).ready(function() {
         }
     });
 
-    $('.collectionSlider .navArrow.rightArrow').click(function() {
+    $('.collectionSlider .navArrow.rightArrow img').click(function() {
         collectionSlider.trigger('next.owl.carousel');
     });
 
-    $('.collectionSlider .navArrow.leftArrow').on('click', function() {
+    $('.collectionSlider .navArrow.leftArrow img').on('click', function() {
         collectionSlider.trigger('prev.owl.carousel');
     });
 
@@ -180,6 +180,55 @@ $(document).ready(function() {
         $('.promotionInner').slideToggle();
         $('.plus').toggleClass('rotated');
     });
+
+
+    ////////// LOGO ///////////
+
+    var headerHeight = $('header').outerHeight();
+
+    $(window).scroll(function () {
+    if ($(window).scrollTop() > headerHeight) {
+      $('.topCollectionsLogo').addClass('resized');
+    }
+    else{
+      $('.topCollectionsLogo').removeClass('resized');
+    }
+    });
+
+
+    ///// DOOR ZOOM /////
+
+    $('.Up').find("span").on('click', function(){
+      $('.upWrapper').addClass("active");
+    });
+
+    $('.closeUpWrapper').on('click', function(){
+      $('.upWrapper').removeClass("active");
+    });
+//
+    $('.Down').find("span").on('click', function(){
+      $('.downWrapper').addClass("active");
+    });
+
+    $('.closeDownWrapper').on('click', function(){
+      $('.downWrapper').removeClass("active");
+    });
+//
+    $('.Left').find("span").on('click', function(){
+      $('.leftWrapper').addClass("active");
+    });
+
+    $('.closeLeftWrapper').on('click', function(){
+      $('.leftWrapper').removeClass("active");
+    });
+
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true,
+      'disableScrolling': false,
+      'alwaysShowNavOnTouchDevices': true,
+      'fitImagesInViewport': true
+    })
 
 
 
